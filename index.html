@@ -3,79 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracker</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Time Tracker & To-Do List</title>
 </head>
 <body>
     <header>
         <h1>Time Tracker</h1>
+        <!-- Dark Mode Toggle Button -->
+        <button id="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
     </header>
     <main>
-        <!-- Timer Section -->
         <section id="time-tracker">
             <h2>Time Tracker</h2>
-            <p id="timer">00:00:00</p>
-            <button id="start-stop-button" onclick="toggleTimeTracking()">Start</button>
-            <button id="reset-button" onclick="resetTimeTracking()">Reset</button>
+            <!-- Timer code here -->
         </section>
-
-       <!-- To-Do List Section -->
-<section id="todo-list">
-    <h2>To-Do List</h2>
-    <input type="text" id="new-task-input" placeholder="Add a new task">
-    <button onclick="addTask()">Add Task</button>
-    <ul id="task-list"></ul>
-</section>
-
-        <!-- Notes Section -->
-<section id="notes">
-    <h2>Notes</h2>
-    <textarea id="note-input" rows="4" placeholder="Write a note..."></textarea>
-    <button onclick="addNote()">Add Note</button>
-    <ul id="note-list"></ul>
-</section>
-        <!-- Tracking History Section -->
-        <section id="tracking-history">
-            <h2>Tracking History</h2>
-            <ul id="history-list"></ul>
+        <section id="todo-list">
+            <h2>To-Do List</h2>
+            <input type="text" id="task-input" placeholder="Add a new task">
+            <button onclick="addTask()">Add Task</button>
+            <ul id="task-list">
+                <!-- To-Do List items here -->
+            </ul>
         </section>
-// Function to toggle dark mode
-function toggleDarkMode() {
-    const body = document.body;
-    const header = document.querySelector('header');
-    const main = document.querySelector('main');
-    const todoList = document.getElementById('todo-list');
-    const notes = document.getElementById('notes');
-
-    // Toggle dark mode class on body
-    body.classList.toggle('dark-mode');
-
-    // Toggle dark mode class on specific elements
-    header.classList.toggle('dark-mode');
-    main.classList.toggle('dark-mode');
-    todoList.classList.toggle('dark-mode');
-    notes.classList.toggle('dark-mode');
-}
-
-// Check and set dark mode preference from local storage
-function checkDarkModePreference() {
-    const isDarkMode = localStorage.getItem('dark-mode');
-    if (isDarkMode === 'true') {
-        toggleDarkMode();
-    }
-}
-
-// Save dark mode preference to local storage
-function saveDarkModePreference() {
-    const body = document.body;
-    const isDarkMode = body.classList.contains('dark-mode');
-    localStorage.setItem('dark-mode', isDarkMode);
-}
-
-// Initialize dark mode preference and button text
-checkDarkModePreference();
-
-        
+        <section id="notes">
+            <h2>Notes</h2>
+            <textarea id="note-input" rows="4" placeholder="Write a note"></textarea>
+            <button onclick="addNote()">Add Note</button>
+            <ul id="note-list">
+                <!-- Notes here -->
+            </ul>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>
