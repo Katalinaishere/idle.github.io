@@ -4,16 +4,16 @@ body, h1, h2, p, ul {
     padding: 0;
 }
 
-/* Set a coastal color scheme for the entire page */
+/* Set a green, pink, and yellow color scheme for the entire page */
 body {
-    background-color: #f0efe2; /* Coastal sand */
+    background-color: #f9f4e1; /* Pale yellow */
     font-family: Arial, sans-serif;
     color: #333; /* Dark text color */
 }
 
 /* Style the header section */
 header {
-    background-color: #2d688d; /* Coastal blue */
+    background-color: #ff6b6b; /* Pastel pink */
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -24,7 +24,7 @@ main {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff; /* White background */
+    background-color: #f3ffbd; /* Pale green */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
@@ -36,7 +36,7 @@ main {
 
 /* Style the to-do list section */
 #todo-list {
-    background-color: #add8e6; /* Light coastal blue */
+    background-color: #ffe156; /* Pastel yellow */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -61,7 +61,7 @@ main {
 
 /* Style buttons for adding and deleting tasks */
 button {
-    background-color: #2d688d; /* Coastal blue */
+    background-color: #ff6b6b; /* Pastel pink */
     color: #fff;
     padding: 5px 10px;
     border: none;
@@ -71,12 +71,12 @@ button {
 
 /* Style buttons on hover */
 button:hover {
-    background-color: #1a3f5c; /* Slightly darker blue */
+    background-color: #ff4747; /* Slightly darker pink */
 }
 
 /* Style the notes section */
 #notes {
-    background-color: #add8e6; /* Light coastal blue */
+    background-color: #ffe156; /* Pastel yellow */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -95,7 +95,7 @@ button:hover {
 
 /* Style the button for adding notes */
 #notes button {
-    background-color: #2d688d; /* Coastal blue */
+    background-color: #ff6b6b; /* Pastel pink */
     color: #fff;
     padding: 5px 10px;
     border: none;
