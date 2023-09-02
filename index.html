@@ -39,6 +39,43 @@
             <h2>Tracking History</h2>
             <ul id="history-list"></ul>
         </section>
+// Function to toggle dark mode
+function toggleDarkMode() {
+    const body = document.body;
+    const header = document.querySelector('header');
+    const main = document.querySelector('main');
+    const todoList = document.getElementById('todo-list');
+    const notes = document.getElementById('notes');
+
+    // Toggle dark mode class on body
+    body.classList.toggle('dark-mode');
+
+    // Toggle dark mode class on specific elements
+    header.classList.toggle('dark-mode');
+    main.classList.toggle('dark-mode');
+    todoList.classList.toggle('dark-mode');
+    notes.classList.toggle('dark-mode');
+}
+
+// Check and set dark mode preference from local storage
+function checkDarkModePreference() {
+    const isDarkMode = localStorage.getItem('dark-mode');
+    if (isDarkMode === 'true') {
+        toggleDarkMode();
+    }
+}
+
+// Save dark mode preference to local storage
+function saveDarkModePreference() {
+    const body = document.body;
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('dark-mode', isDarkMode);
+}
+
+// Initialize dark mode preference and button text
+checkDarkModePreference();
+
+        
     </main>
     <script src="script.js"></script>
 </body>
