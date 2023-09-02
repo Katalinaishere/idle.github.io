@@ -6,14 +6,14 @@ body, h1, h2, p, ul {
 
 /* Set a pastel color scheme for the entire page */
 body {
-    background-color: #f0e6f4; /* Pastel purple */
+    background-color: #f0e6f4; /* Pastel lavender */
     font-family: Arial, sans-serif;
     color: #333; /* Dark text color */
 }
 
 /* Style the header section */
 header {
-    background-color: #8351a2; /* Pastel violet */
+    background-color: #637a9b; /* Pastel blue */
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -24,7 +24,7 @@ main {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #e6eaf2; /* Lighter pastel blue */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
@@ -36,7 +36,7 @@ main {
 
 /* Style the to-do list section */
 #todo-list {
-    background-color: #f9d9e6; /* Pastel pink */
+    background-color: #f8e3db; /* Pastel peach */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -61,7 +61,7 @@ main {
 
 /* Style buttons for adding and deleting tasks */
 button {
-    background-color: #8351a2; /* Pastel violet */
+    background-color: #637a9b; /* Pastel blue */
     color: #fff;
     padding: 5px 10px;
     border: none;
@@ -71,6 +71,6 @@ button {
 
 /* Style buttons on hover */
 button:hover {
-    background-color: #613b77; /* Slightly darker violet */
+    background-color: #3c4a63; /* Slightly darker blue */
 }
 
