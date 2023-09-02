@@ -4,7 +4,7 @@ body, h1, h2, p, ul {
     padding: 0;
 }
 
-/* Set a pastel purple background color and font for the entire page */
+/* Set a pastel color scheme for the entire page */
 body {
     background-color: #f0e6f4; /* Pastel purple */
     font-family: Arial, sans-serif;
@@ -29,7 +29,7 @@ main {
     border-radius: 10px;
 }
 
-/* Style the time tracker section */
+/* Style the timer section */
 #time-tracker {
     margin-bottom: 20px;
 }
@@ -43,7 +43,12 @@ main {
 }
 
 /* Style to-do list items */
-.todo-item {
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,20 +60,6 @@ main {
 }
 
 /* Style buttons for adding and deleting tasks */
-.todo-item .actions {
-    display: flex;
-    gap: 10px;
-}
-
-/* Style input for adding new tasks */
-#new-task-input {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Style buttons */
 button {
     background-color: #8351a2; /* Pastel violet */
     color: #fff;
@@ -82,3 +73,4 @@ button {
 button:hover {
     background-color: #613b77; /* Slightly darker violet */
 }
+
