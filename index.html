@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,40 +13,19 @@
     <main>
         <!-- Time tracking section -->
         <section id="time-tracker">
-            <!-- Display current time and tracking controls here -->
+            <h2>Time Tracker</h2>
+            <p id="timer">00:00:00</p>
+            <button id="start-stop-button" onclick="toggleTimeTracking()">Start</button>
         </section>
 
         <!-- To-Do list section -->
         <section id="todo-list">
-            <!-- Add, display, and manage to-do list items here -->
-        </section>
-    </main>
-    <script src="<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Time Tracker & To-Do List</title>
-</head>
-<body>
-    <header>
-        <h1>Time Tracker & To-Do List</h1>
-    </header>
-    <main>
-        <!-- Time tracking section -->
-        <section id="time-tracker">
-            <!-- Display current time and tracking controls here -->
-        </section>
-
-        <!-- To-Do list section -->
-        <section id="todo-list">
-            <!-- Add, display, and manage to-do list items here -->
+            <h2>To-Do List</h2>
+            <input type="text" id="new-task-input" placeholder="Add a new task">
+            <button onclick="addTask()">Add Task</button>
         </section>
     </main>
     <script src="script.js"></script>
 </body>
 </html>
-</script>
-</body>
-</html>
+
