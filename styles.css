@@ -4,14 +4,13 @@ body, h1, h2, p, ul {
     padding: 0;
 }
 
-/* Set a light green, light pink, white, and pastel color scheme for the entire page */
+/* Light Mode Styles */
 body {
     background-color: #f9f9f9; /* Off-white */
     font-family: Arial, sans-serif;
     color: #333; /* Dark text color */
 }
 
-/* Style the header section */
 header {
     background-color: #ffcccb; /* Light pink */
     color: #fff;
@@ -19,7 +18,6 @@ header {
     padding: 20px;
 }
 
-/* Style the main content section */
 main {
     max-width: 800px;
     margin: 20px auto;
@@ -29,12 +27,10 @@ main {
     border-radius: 10px;
 }
 
-/* Style the timer section */
 #time-tracker {
     margin-bottom: 20px;
 }
 
-/* Style the to-do list section */
 #todo-list {
     background-color: #fff; /* White */
     padding: 20px;
@@ -42,7 +38,6 @@ main {
     border-radius: 10px;
 }
 
-/* Style to-do list items */
 #task-list {
     list-style: none;
     padding: 0;
@@ -59,7 +54,6 @@ main {
     border-radius: 5px;
 }
 
-/* Style buttons for adding and deleting tasks */
 button {
     background-color: #ffcccb; /* Light pink */
     color: #fff;
@@ -69,12 +63,10 @@ button {
     cursor: pointer;
 }
 
-/* Style buttons on hover */
 button:hover {
     background-color: #ffaaaa; /* Slightly darker pink */
 }
 
-/* Style the notes section */
 #notes {
     background-color: #fff; /* White */
     padding: 20px;
@@ -83,7 +75,6 @@ button:hover {
     margin-top: 20px;
 }
 
-/* Style the note input textarea */
 #note-input {
     width: 100%;
     padding: 10px;
@@ -93,7 +84,6 @@ button:hover {
     resize: none;
 }
 
-/* Style the button for adding notes */
 #notes button {
     background-color: #ffcccb; /* Light pink */
     color: #fff;
@@ -103,13 +93,11 @@ button:hover {
     cursor: pointer;
 }
 
-/* Style the note list */
 #note-list {
     list-style: none;
     padding: 0;
 }
 
-/* Style individual notes */
 #note-list li {
     background-color: #f0f8ff; /* Pastel blue */
     padding: 10px;
@@ -117,3 +105,50 @@ button:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Light text color */
+}
+
+.dark-mode header {
+    background-color: #ff6b6b; /* Pastel pink */
+}
+
+.dark-mode main {
+    background-color: #c1e1a6; /* Darker green */
+}
+
+.dark-mode #todo-list {
+    background-color: #444; /* Dark gray */
+    color: #fff;
+}
+
+.dark-mode #task-list li {
+    background-color: #666; /* Darker gray */
+}
+
+.dark-mode button {
+    background-color: #ff6b6b; /* Pastel pink */
+}
+
+.dark-mode button:hover {
+    background-color: #ff4747; /* Slightly darker pink */
+}
+
+.dark-mode #notes {
+    background-color: #444; /* Dark gray */
+    color: #fff;
+}
+
+.dark-mode #note-list li {
+    background-color: #666; /* Darker gray */
+}
+
+.dark-mode #note-input {
+    background-color: #444; /* Dark gray */
+    color: #fff;
+    border: 1px solid #ccc;
+}
+
