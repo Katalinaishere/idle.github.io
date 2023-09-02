@@ -14,6 +14,8 @@
             <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
             <span class="slider round"></span>
         </label>
+        <!-- Real-Time Clock -->
+        <div id="clock"></div>
     </header>
     <main>
         <section id="time-tracker">
@@ -22,6 +24,8 @@
                 <button onclick="startTimer()">Start</button>
                 <button onclick="stopTimer()">Stop</button>
                 <button onclick="resetTimer()">Reset</button>
+                <input type="text" id="timer-name" placeholder="Enter a name for this time entry">
+                <button onclick="saveTimeEntry()">Save</button>
                 <p id="timer">00:00:00</p>
             </div>
             <!-- Tracking history will go here -->
