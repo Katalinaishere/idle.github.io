@@ -11,7 +11,7 @@
         <h1>Time Tracker</h1>
     </header>
     <main>
-        <!-- Time tracking section -->
+        <!-- Timer Section -->
         <section id="time-tracker">
             <h2>Time Tracker</h2>
             <p id="timer">00:00:00</p>
@@ -19,19 +19,20 @@
             <button id="reset-button" onclick="resetTimeTracking()">Reset</button>
         </section>
 
-        <!-- To-Do list section -->
+        <!-- To-Do List Section -->
         <section id="todo-list">
             <h2>To-Do List</h2>
             <input type="text" id="new-task-input" placeholder="Add a new task">
             <button onclick="addTask()">Add Task</button>
             <ul id="task-list"></ul>
         </section>
+
+        <!-- Tracking History Section -->
+        <section id="tracking-history">
+            <h2>Tracking History</h2>
+            <ul id="history-list"></ul>
+        </section>
     </main>
-    <section id="tracking-history">
-        <h2>Tracking History</h2>
-        <ul id="history-list"></ul>
-    </section>
     <script src="script.js"></script>
 </body>
 </html>
-
