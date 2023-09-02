@@ -10,7 +10,7 @@ const trackingHistory = [];
 
 // Variables for to-do list
 const todoList = [];
-const todoListContainer = document.getElementById("todo-list");
+const todoListContainer = document.getElementById("task-list");
 const newTaskInput = document.getElementById("new-task-input");
 
 // Function to start or stop time tracking
@@ -97,7 +97,7 @@ function displayTrackingHistory() {
 function addTask() {
     const taskText = newTaskInput.value.trim();
     if (taskText !== "") {
-        const task = { text: taskText, completed: false };
+        const task = { text: taskText };
         todoList.push(task);
         newTaskInput.value = "";
         displayTodoList();
@@ -119,5 +119,3 @@ function displayTodoList() {
 updateTimer();
 displayTrackingHistory();
 displayTodoList();
-
-
