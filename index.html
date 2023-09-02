@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Time Tracker & To-Do List</h1>
+        <h1>Time Tracker</h1>
     </header>
     <main>
         <!-- Time tracking section -->
@@ -16,6 +16,7 @@
             <h2>Time Tracker</h2>
             <p id="timer">00:00:00</p>
             <button id="start-stop-button" onclick="toggleTimeTracking()">Start</button>
+            <button id="reset-button" onclick="resetTimeTracking()">Reset</button>
         </section>
 
         <!-- To-Do list section -->
@@ -23,8 +24,13 @@
             <h2>To-Do List</h2>
             <input type="text" id="new-task-input" placeholder="Add a new task">
             <button onclick="addTask()">Add Task</button>
+            <ul id="task-list"></ul>
         </section>
     </main>
+    <section id="tracking-history">
+        <h2>Tracking History</h2>
+        <ul id="history-list"></ul>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
