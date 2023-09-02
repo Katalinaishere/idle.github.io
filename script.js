@@ -178,6 +178,82 @@ function displayNotes() {
     }
 }
 
+// Function to toggle dark mode
+function toggleDarkMode() {
+    const body = document.body;
+    const header = document.querySelector('header');
+    const main = document.querySelector('main');
+    const todoList = document.getElementById('todo-list');
+    const notes = document.getElementById('notes');
+
+    // Toggle dark mode class on body
+    body.classList.toggle('dark-mode');
+
+    // Toggle dark mode class on specific elements
+    header.classList.toggle('dark-mode');
+    main.classList.toggle('dark-mode');
+    todoList.classList.toggle('dark-mode');
+    notes.classList.toggle('dark-mode');
+}
+
+// Check and set dark mode preference from local storage
+function checkDarkModePreference() {
+    const isDarkMode = localStorage.getItem('dark-mode');
+    if (isDarkMode === 'true') {
+        toggleDarkMode();
+    }
+}
+
+// Save dark mode preference to local storage
+function saveDarkModePreference() {
+    const body = document.body;
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('dark-mode', isDarkMode);
+}
+
+// Function to add a task to the to-do list
+function addTask() {
+    const taskInput = document.getElementById('task-input');
+    const taskText = taskInput.value.trim();
+
+    if (taskText === '') {
+        return; // Don't add empty tasks
+    }
+
+    const taskList = document.getElementById('task-list');
+
+    // Create a new list item for the task
+    const taskItem = document.createElement('li');
+    taskItem.innerHTML = `
+        <span>${taskText}</span>
+        <button onclick="removeTask(this)">Remove</button>
+    `;
+
+    // Add the task to the list
+    taskList.appendChild(taskItem);
+
+    // Clear the task input
+    taskInput.value = '';
+}
+
+// Function to remove a task from the to-do list
+function removeTask(button) {
+    const taskItem = button.parentElement;
+    const taskList = taskItem.parentElement;
+    taskList.removeChild(taskItem);
+}
+
+// Event listener for dark mode toggle button
+const darkModeToggleBtn = document.getElementById('dark-mode-toggle');
+darkModeToggleBtn.addEventListener('click', () => {
+    toggleDarkMode();
+    saveDarkModePreference();
+});
+
+// Initialize dark mode preference and button text
+checkDarkModePreference();
+
+
 
 // Initialize the timer, tracking history, and to-do list display, and notes display
 updateTimer();
