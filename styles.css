@@ -16,6 +16,14 @@ header {
     color: #fff;
     text-align: center;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#clock {
+    font-size: 18px;
+    margin-right: 20px;
 }
 
 main {
@@ -116,6 +124,10 @@ button:hover {
     background-color: #ff6b6b; /* Pastel pink */
 }
 
+.dark-mode #clock {
+    color: #fff;
+}
+
 .dark-mode main {
     background-color: #c1e1a6; /* Darker green */
 }
@@ -197,4 +209,3 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
-
