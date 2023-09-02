@@ -74,3 +74,47 @@ button:hover {
     background-color: #3c4a63; /* Slightly darker blue */
 }
 
+/* Style the notes section */
+#notes {
+    background-color: #f8e3db; /* Pastel peach */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Style the note input textarea */
+#note-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+/* Style the button for adding notes */
+#notes button {
+    background-color: #637a9b; /* Pastel blue */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the note list */
+#note-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style individual notes */
+#note-list li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
