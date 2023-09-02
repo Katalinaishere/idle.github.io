@@ -10,12 +10,24 @@
     <header>
         <h1>Time Tracker</h1>
         <!-- Dark Mode Toggle Button -->
-        <button id="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+        <label class="switch">
+            <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+            <span class="slider round"></span>
+        </label>
     </header>
     <main>
         <section id="time-tracker">
             <h2>Time Tracker</h2>
-            <!-- Timer code here -->
+            <div>
+                <button onclick="startTimer()">Start</button>
+                <button onclick="stopTimer()">Stop</button>
+                <button onclick="resetTimer()">Reset</button>
+                <p id="timer">00:00:00</p>
+            </div>
+            <!-- Tracking history will go here -->
+            <ul id="tracking-history">
+                <!-- History items here -->
+            </ul>
         </section>
         <section id="todo-list">
             <h2>To-Do List</h2>
