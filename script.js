@@ -1,3 +1,4 @@
+
 let timerInterval;
 let timerRunning = false;
 let hours = 0;
@@ -83,118 +84,6 @@ function resetTimer() {
     seconds = 0;
     updateTimerDisplay();
 }
-let timerHistory = [];
-
-// Function to save a time entry with a name
-function saveTimeEntry() {
-    const timerName = document.getElementById('timer-name').value.trim();
-    if (timerName === '') {
-        alert('Please enter a name for this time entry.');
-        return;
-    }
-
-    const elapsedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-    const timeEntry = {
-        name: timerName,
-        time: elapsedTime,
-    };
-
-    timerHistory.push(timeEntry);
-
-    // Display the time entry in the history
-    const timerHistoryList = document.getElementById('timer-history');
-    const historyItem = document.createElement('li');
-    historyItem.innerHTML = `<strong>${timerName}:</strong> ${elapsedTime}`;
-    timerHistoryList.appendChild(historyItem);
-
-    // Clear the name input
-    document.getElementById('timer-name').value = '';
-
-    // Reset the timer
-    resetTimer();
-}
-
-// Function to add a task to the to-do list
-function addTask() {
-    const taskInput = document.getElementById('task-input');
-    const taskText = taskInput.value.trim();
-
-    if (taskText === '') {
-        return; // Don't add empty tasks
-    }
-
-    const taskList = document.getElementById('task-list');
-
-    // Create a new list item for the task
-    const taskItem = document.createElement('li');
-    taskItem.innerHTML = `
-        <span>${taskText}</span>
-        <button onclick="removeTask(this)">Remove</button>
-    `;
-
-    // Add the task to the list
-    taskList.appendChild(taskItem);
-
-    // Clear the task input
-    taskInput.value = '';
-}
-
-// Function to mark a task as completed
-function toggleTaskCompletion(checkbox) {
-    const taskText = checkbox.nextElementSibling;
-    if (checkbox.checked) {
-        taskText.style.textDecoration = 'line-through';
-    } else {
-        taskText.style.textDecoration = 'none';
-    }
-}
-// Function to remove a task from the to-do list
-function removeTask(button) {
-    const taskItem = button.parentElement;
-    const taskList = taskItem.parentElement;
-    taskList.removeChild(taskItem);
-}
-
-// Function to add a note
-function addNote() {
-    const noteInput = document.getElementById('note-input');
-    const noteText = noteInput.value.trim();
-
-    if (noteText === '') {
-        return; // Don't add empty notes
-    }
-
-    const noteList = document.getElementById('note-list');
-
-    // Create a new list item for the note
-    const noteItem = document.createElement('li');
-    const now = new Date();
-    const formattedDate = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
-    noteItem.innerHTML = `
-        <span>${formattedDate}</span>
-        <p>${noteText}</p>
-    `;
-
-    // Add the note to the list
-    noteList.appendChild(noteItem);
-
-    // Clear the note input
-    noteInput.value = '';
-}
-
-// Event listener for dark mode toggle button
-const darkModeToggleBtn = document.getElementById('dark-mode-toggle');
-darkModeToggleBtn.addEventListener('click', () => {
-    toggleDarkMode();
-    saveDarkModePreference();
-});
-// Real-time clock function
-function updateClock() {
-    const clockElement = document.getElementById('clock');
-    const now = new Date();
-    const timeString = now.toLocaleTimeString();
-    clockElement.textContent = timeString;
-}
 
 // Function to save a time entry with a name
 function saveTimeEntry() {
@@ -259,7 +148,49 @@ function addTask() {
     taskInput.value = '';
 }
 
-// ... (Rest of your JavaScript code)
+// Function to mark a task as completed
+function toggleTaskCompletion(checkbox) {
+    const taskText = checkbox.nextElementSibling;
+    if (checkbox.checked) {
+        taskText.style.textDecoration = 'line-through';
+    } else {
+        taskText.style.textDecoration = 'none';
+    }
+}
+
+// Function to remove a task from the to-do list
+function removeTask(button) {
+    const taskItem = button.parentElement;
+    const taskList = taskItem.parentElement;
+    taskList.removeChild(taskItem);
+}
+
+// Function to add a note
+function addNote() {
+    const noteInput = document.getElementById('note-input');
+    const noteText = noteInput.value.trim();
+
+    if (noteText === '') {
+        return; // Don't add empty notes
+    }
+
+    const noteList = document.getElementById('note-list');
+
+    // Create a new list item for the note
+    const noteItem = document.createElement('li');
+    const now = new Date();
+    const formattedDate = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+    noteItem.innerHTML = `
+        <span>${formattedDate}</span>
+        <p>${noteText}</p>
+    `;
+
+    // Add the note to the list
+    noteList.appendChild(noteItem);
+
+    // Clear the note input
+    noteInput.value = '';
+}
 
 // Display the timer history on page load
 function displayTimerHistory() {
@@ -282,5 +213,5 @@ setInterval(updateClock, 1000);
 // Initialize dark mode preference and button text
 checkDarkModePreference();
 updateTimerDisplay();
-displayTimerHistory(); // Display the timer history on page load
-
+displayTimerHistory();
+updateClock(); // Initialize the clock
