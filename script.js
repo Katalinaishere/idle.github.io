@@ -136,8 +136,52 @@ function displayTodoList() {
     }
 }
 
-// Initialize the timer, tracking history, and to-do list display
+// Variables for notes
+const noteList = [];
+const noteListContainer = document.getElementById("note-list");
+const noteInput = document.getElementById("note-input");
+
+// Function to add a note
+function addNote() {
+    const noteText = noteInput.value.trim();
+    if (noteText !== "") {
+        const currentTime = new Date();
+        const note = {
+            text: noteText,
+            timestamp: currentTime.toLocaleString(),
+        };
+        noteList.push(note);
+        noteInput.value = "";
+        displayNotes();
+    }
+}
+
+// Function to display notes
+function displayNotes() {
+    noteListContainer.innerHTML = "";
+    for (let i = 0; i < noteList.length; i++) {
+        const note = noteList[i];
+        const listItem = document.createElement("li");
+
+        // Create a div for the note text
+        const noteTextDiv = document.createElement("div");
+        noteTextDiv.textContent = note.text;
+
+        // Create a div for the timestamp
+        const timestampDiv = document.createElement("div");
+        timestampDiv.textContent = `Created at: ${note.timestamp}`;
+
+        listItem.appendChild(noteTextDiv);
+        listItem.appendChild(timestampDiv);
+
+        noteListContainer.appendChild(listItem);
+    }
+}
+
+
+// Initialize the timer, tracking history, and to-do list display, and notes display
 updateTimer();
 displayTrackingHistory();
 displayTodoList();
+displayNotes();
 
