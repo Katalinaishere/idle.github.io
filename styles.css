@@ -4,16 +4,16 @@ body, h1, h2, p, ul {
     padding: 0;
 }
 
-/* Set a green, pink, and yellow color scheme for the entire page */
+/* Set a light green, light pink, white, and pastel color scheme for the entire page */
 body {
-    background-color: #f9f4e1; /* Pale yellow */
+    background-color: #f9f9f9; /* Off-white */
     font-family: Arial, sans-serif;
     color: #333; /* Dark text color */
 }
 
 /* Style the header section */
 header {
-    background-color: #ff6b6b; /* Pastel pink */
+    background-color: #ffcccb; /* Light pink */
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -24,7 +24,7 @@ main {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f3ffbd; /* Pale green */
+    background-color: #e2f0cb; /* Light green */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
@@ -36,7 +36,7 @@ main {
 
 /* Style the to-do list section */
 #todo-list {
-    background-color: #ffe156; /* Pastel yellow */
+    background-color: #fff; /* White */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -54,14 +54,14 @@ main {
     align-items: center;
     padding: 10px;
     margin: 5px 0;
-    background-color: #fff;
+    background-color: #f0f8ff; /* Pastel blue */
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 /* Style buttons for adding and deleting tasks */
 button {
-    background-color: #ff6b6b; /* Pastel pink */
+    background-color: #ffcccb; /* Light pink */
     color: #fff;
     padding: 5px 10px;
     border: none;
@@ -71,12 +71,12 @@ button {
 
 /* Style buttons on hover */
 button:hover {
-    background-color: #ff4747; /* Slightly darker pink */
+    background-color: #ffaaaa; /* Slightly darker pink */
 }
 
 /* Style the notes section */
 #notes {
-    background-color: #ffe156; /* Pastel yellow */
+    background-color: #fff; /* White */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -95,7 +95,7 @@ button:hover {
 
 /* Style the button for adding notes */
 #notes button {
-    background-color: #ff6b6b; /* Pastel pink */
+    background-color: #ffcccb; /* Light pink */
     color: #fff;
     padding: 5px 10px;
     border: none;
@@ -111,7 +111,7 @@ button:hover {
 
 /* Style individual notes */
 #note-list li {
-    background-color: #fff;
+    background-color: #f0f8ff; /* Pastel blue */
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #ccc;
