@@ -3,6 +3,8 @@ let timerRunning = false;
 let hours = 0;
 let minutes = 0;
 let seconds = 0;
+let timerHistory = [];
+let taskIdCounter = 1;
 
 // Function to toggle dark mode
 function toggleDarkMode() {
@@ -194,10 +196,91 @@ function updateClock() {
     clockElement.textContent = timeString;
 }
 
+// Function to save a time entry with a name
+function saveTimeEntry() {
+    const timerName = document.getElementById('timer-name').value.trim();
+    if (timerName === '') {
+        alert('Please enter a name for this time entry.');
+        return;
+    }
+
+    const elapsedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    const timeEntry = {
+        id: Date.now(),
+        name: timerName,
+        time: elapsedTime,
+    };
+
+    timerHistory.push(timeEntry);
+
+     // Display the time entry in the history
+    const timerHistoryList = document.getElementById('timer-history');
+    const historyItem = document.createElement('li');
+    historyItem.innerHTML = `<strong>${timerName}:</strong> ${elapsedTime}`;
+    timerHistoryList.appendChild(historyItem);
+
+    // Clear the name input
+    document.getElementById('timer-name').value = '';
+
+    // Reset the timer
+    resetTimer();
+}
+
+// Function to create a task item with a checkbox
+function createTaskItem(taskText) {
+    const taskList = document.getElementById('task-list');
+
+    // Create a new list item for the task with a checkbox
+    const taskItem = document.createElement('li');
+    taskItem.innerHTML = `
+        <input type="checkbox" id="task-${taskIdCounter}">
+        <label for="task-${taskIdCounter}">${taskText}</label>
+        <button onclick="removeTask(this)">Remove</button>
+    `;
+
+    taskIdCounter++;
+
+    // Add the task to the list
+    taskList.appendChild(taskItem);
+}
+
+// Function to add a task to the to-do list
+function addTask() {
+    const taskInput = document.getElementById('task-input');
+    const taskText = taskInput.value.trim();
+
+    if (taskText === '') {
+        return; // Don't add empty tasks
+    }
+
+    createTaskItem(taskText);
+
+    // Clear the task input
+    taskInput.value = '';
+}
+
+// ... (Rest of your JavaScript code)
+
+// Display the timer history on page load
+function displayTimerHistory() {
+    const timerHistoryList = document.getElementById('timer-history');
+
+    // Clear existing entries
+    timerHistoryList.innerHTML = '';
+
+    // Add saved time entries
+    for (const timeEntry of timerHistory) {
+        const historyItem = document.createElement('li');
+        historyItem.innerHTML = `<strong>${timeEntry.name}:</strong> ${timeEntry.time}`;
+        timerHistoryList.appendChild(historyItem);
+    }
+}
+
 // Update the clock every second
 setInterval(updateClock, 1000);
 
 // Initialize dark mode preference and button text
 checkDarkModePreference();
 updateTimerDisplay();
+displayTimerHistory(); // Display the timer history on page load
 
