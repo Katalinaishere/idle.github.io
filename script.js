@@ -81,6 +81,36 @@ function resetTimer() {
     seconds = 0;
     updateTimerDisplay();
 }
+let timerHistory = [];
+
+// Function to save a time entry with a name
+function saveTimeEntry() {
+    const timerName = document.getElementById('timer-name').value.trim();
+    if (timerName === '') {
+        alert('Please enter a name for this time entry.');
+        return;
+    }
+
+    const elapsedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    const timeEntry = {
+        name: timerName,
+        time: elapsedTime,
+    };
+
+    timerHistory.push(timeEntry);
+
+    // Display the time entry in the history
+    const timerHistoryList = document.getElementById('timer-history');
+    const historyItem = document.createElement('li');
+    historyItem.innerHTML = `<strong>${timerName}:</strong> ${elapsedTime}`;
+    timerHistoryList.appendChild(historyItem);
+
+    // Clear the name input
+    document.getElementById('timer-name').value = '';
+
+    // Reset the timer
+    resetTimer();
+}
 
 // Function to add a task to the to-do list
 function addTask() {
@@ -107,6 +137,15 @@ function addTask() {
     taskInput.value = '';
 }
 
+// Function to mark a task as completed
+function toggleTaskCompletion(checkbox) {
+    const taskText = checkbox.nextElementSibling;
+    if (checkbox.checked) {
+        taskText.style.textDecoration = 'line-through';
+    } else {
+        taskText.style.textDecoration = 'none';
+    }
+}
 // Function to remove a task from the to-do list
 function removeTask(button) {
     const taskItem = button.parentElement;
@@ -147,6 +186,16 @@ darkModeToggleBtn.addEventListener('click', () => {
     toggleDarkMode();
     saveDarkModePreference();
 });
+// Real-time clock function
+function updateClock() {
+    const clockElement = document.getElementById('clock');
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    clockElement.textContent = timeString;
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
 
 // Initialize dark mode preference and button text
 checkDarkModePreference();
