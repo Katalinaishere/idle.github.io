@@ -97,9 +97,17 @@ function displayTrackingHistory() {
 function addTask() {
     const taskText = newTaskInput.value.trim();
     if (taskText !== "") {
-        const task = { text: taskText };
+        const task = { text: taskText, completed: false }; // Add 'completed' property
         todoList.push(task);
         newTaskInput.value = "";
+        displayTodoList();
+    }
+}
+
+// Function to mark a task as completed
+function toggleTaskCompletion(index) {
+    if (index >= 0 && index < todoList.length) {
+        todoList[index].completed = !todoList[index].completed;
         displayTodoList();
     }
 }
@@ -110,7 +118,20 @@ function displayTodoList() {
     for (let i = 0; i < todoList.length; i++) {
         const task = todoList[i];
         const listItem = document.createElement("li");
-        listItem.textContent = task.text;
+
+        // Create a checkbox for marking tasks as completed
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = task.completed;
+        checkbox.addEventListener("change", () => toggleTaskCompletion(i));
+
+        // Create a label for the task text
+        const label = document.createElement("label");
+        label.textContent = task.text;
+
+        listItem.appendChild(checkbox);
+        listItem.appendChild(label);
+
         todoListContainer.appendChild(listItem);
     }
 }
@@ -119,3 +140,4 @@ function displayTodoList() {
 updateTimer();
 displayTrackingHistory();
 displayTodoList();
+
