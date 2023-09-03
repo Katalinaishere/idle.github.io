@@ -6,7 +6,7 @@ body, h1, h2, p, ul {
 
 /* Light Mode Styles */
 body {
-    background-color: #f9f9f9; /* Off-white */
+    background-color: #fffcdb; /* Lemon Twist */
     font-family: Arial, sans-serif;
     color: #333; /* Dark text color */
 }
@@ -30,7 +30,7 @@ main {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #e2f0cb; /* Light green */
+    background-color: #e2f0cb; /* Rural Green */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
@@ -40,7 +40,7 @@ main {
 }
 
 #todo-list {
-    background-color: #fff; /* White */
+    background-color: #ffffff; /* Dover White */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -80,7 +80,7 @@ button:hover {
 }
 
 #notes {
-    background-color: #fff; /* White */
+    background-color: #ffffff; /* Dover White */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -120,8 +120,8 @@ button:hover {
 
 /* Dark Mode Styles */
 .dark-mode {
-    background-color: #333; /* Dark background color */
-    color: #fff; /* Light text color */
+    background-color: #333; /* Dark Gray */
+    color: #fff; /* White */
 }
 
 .dark-mode header {
@@ -217,6 +217,7 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
+
 /* Cute FullCalendar Style */
 
 /* Calendar container */
