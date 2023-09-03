@@ -217,5 +217,64 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
+/* Cute FullCalendar Style */
+
+/* Calendar container */
+#calendar {
+    background-color: #ffeecc; /* Light yellow */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+/* Event styles */
+.fc-event {
+    background-color: #ff99cc; /* Pink */
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+/* Header styles */
+.fc-header-toolbar {
+    background-color: #ffcc99; /* Light orange */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Button styles */
+.fc-button-primary {
+    background-color: #ff66b2; /* Light pink */
+    border-color: #ff66b2; /* Light pink */
+    color: #fff;
+    border-radius: 5px;
+}
+
+.fc-button-primary:hover {
+    background-color: #ff3385; /* Darker pink on hover */
+    border-color: #ff3385; /* Darker pink on hover */
+}
+
+/* Date styles */
+.fc-day-header {
+    background-color: #ffeecc; /* Light yellow */
+    color: #333; /* Dark text color */
+    font-weight: bold;
+}
+
+/* Day cell styles */
+.fc-day {
+    background-color: #fff; /* White */
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Current day styles */
+.fc-today {
+    background-color: #ffcc99; /* Light orange */
+    border-radius: 50%;
+    color: #333; /* Dark text color */
+    font-weight: bold;
+}
 
 
