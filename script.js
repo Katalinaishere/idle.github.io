@@ -206,6 +206,29 @@ function displayTimerHistory() {
         timerHistoryList.appendChild(historyItem);
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        plugins: ['dayGrid'],
+        events: [
+            // Your event data here
+            {
+                title: 'Event 1',
+                start: '2023-09-15'
+            },
+            {
+                title: 'Event 2',
+                start: '2023-09-20'
+            }
+            // Add more events as needed
+        ]
+    });
+
+    calendar.render();
+});
+
+
 
 // Update the clock every second
 setInterval(updateClock, 1000);
