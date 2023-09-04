@@ -228,8 +228,16 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar.render();
 });
 
-
-
+// Real time clock 
+function updateClock (){
+    const clock = document.getElementById('clock');
+    const now = new Date(); 
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().paStart(2, '0');
+    const seconds = now.getSecond().toString().paSart(2, '0');
+    const timeString = '${hours}:${minutes}:${seconds}';
+    clock.textContent = timeString;   
+}
 // Update the clock every second
 setInterval(updateClock, 1000);
 
