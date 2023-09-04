@@ -13,19 +13,20 @@
 </head>
 <body>
     <header>
+        <!-- Real-Time Clock -->
+        <div id="clock"></div>
         <h1>Time Tracker</h1>
         <!-- Dark Mode Toggle Button -->
         <label class="switch">
             <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
             <span class="slider round"></span>
         </label>
+        
       
     </header>
     <main>
         <section id="time-tracker">
             <h2>Time Tracker</h2>
-            <!-- Real-Time Clock -->
-        <div id="clock"></div>
             <div>
                 <button onclick="startTimer()">Start</button>
                 <button onclick="stopTimer()">Stop</button>
