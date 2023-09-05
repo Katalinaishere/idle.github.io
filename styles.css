@@ -6,13 +6,13 @@ body, h1, h2, p, ul {
 
 /* Light Mode Styles */
 body {
-    background-color: #fffcdb; /* Lemon Twist */
+    background-color: #FDFDFD; /* Light Grayish White */
     font-family: Arial, sans-serif;
     color: #333; /* Dark text color */
 }
 
 header {
-    background-color: #ffcccb; /* Light pink */
+    background-color: #F05A28; /* Coral Orange */
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -30,7 +30,7 @@ main {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #e2f0cb; /* Rural Green */
+    background-color: #A6D785; /* Pastel Green */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
@@ -40,7 +40,7 @@ main {
 }
 
 #todo-list {
-    background-color: #ffffff; /* Dover White */
+    background-color: #FAE3E3; /* Light Salmon Pink */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -57,7 +57,7 @@ main {
     align-items: center;
     padding: 10px;
     margin: 5px 0;
-    background-color: #f0f8ff; /* Pastel blue */
+    background-color: #AED9E0; /* Sky Blue */
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -67,7 +67,7 @@ input[type="checkbox"] {
 }
 
 button {
-    background-color: #ffcccb; /* Light pink */
+    background-color: #F05A28; /* Coral Orange */
     color: #fff;
     padding: 5px 10px;
     border: none;
@@ -76,11 +76,11 @@ button {
 }
 
 button:hover {
-    background-color: #ffaaaa; /* Slightly darker pink */
+    background-color: #E84E24; /* Slightly Darker Orange */
 }
 
 #notes {
-    background-color: #ffffff; /* Dover White */
+    background-color: #FAE3E3; /* Light Salmon Pink */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -97,7 +97,7 @@ button:hover {
 }
 
 #notes button {
-    background-color: #ffcccb; /* Light pink */
+    background-color: #F05A28; /* Coral Orange */
     color: #fff;
     padding: 5px 10px;
     border: none;
@@ -111,7 +111,7 @@ button:hover {
 }
 
 #note-list li {
-    background-color: #f0f8ff; /* Pastel blue */
+    background-color: #AED9E0; /* Sky Blue */
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #ccc;
@@ -125,7 +125,7 @@ button:hover {
 }
 
 .dark-mode header {
-    background-color: #ff6b6b; /* Pastel pink */
+    background-color: #6B3A61; /* Dark Purple */
 }
 
 .dark-mode #clock {
@@ -133,16 +133,16 @@ button:hover {
 }
 
 .dark-mode main {
-    background-color: #c1e1a6; /* Darker green */
+    background-color: #2B4C6F; /* Navy Blue */
 }
 
 .dark-mode #todo-list {
-    background-color: #444; /* Dark gray */
+    background-color: #444; /* Dark Gray */
     color: #fff;
 }
 
 .dark-mode #task-list li {
-    background-color: #666; /* Darker gray */
+    background-color: #666; /* Darker Gray */
 }
 
 .dark-mode input[type="checkbox"] {
@@ -150,24 +150,24 @@ button:hover {
 }
 
 .dark-mode button {
-    background-color: #ff6b6b; /* Pastel pink */
+    background-color: #6B3A61; /* Dark Purple */
 }
 
 .dark-mode button:hover {
-    background-color: #ff4747; /* Slightly darker pink */
+    background-color: #542B4E; /* Slightly Darker Purple */
 }
 
 .dark-mode #notes {
-    background-color: #444; /* Dark gray */
+    background-color: #444; /* Dark Gray */
     color: #fff;
 }
 
 .dark-mode #note-list li {
-    background-color: #666; /* Darker gray */
+    background-color: #666; /* Darker Gray */
 }
 
 .dark-mode #note-input {
-    background-color: #444; /* Dark gray */
+    background-color: #444; /* Dark Gray */
     color: #fff;
     border: 1px solid #ccc;
 }
@@ -222,7 +222,7 @@ input:checked + .slider:before {
 
 /* Calendar container */
 #calendar {
-    background-color: #ffeecc; /* Light yellow */
+    background-color: #FFE64D; /* Lemon Yellow */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -230,7 +230,7 @@ input:checked + .slider:before {
 
 /* Event styles */
 .fc-event {
-    background-color: #ff99cc; /* Pink */
+    background-color: #FF6B6B; /* Light Red */
     color: #fff;
     border-radius: 5px;
     padding: 5px 10px;
@@ -238,27 +238,27 @@ input:checked + .slider:before {
 
 /* Header styles */
 .fc-header-toolbar {
-    background-color: #ffcc99; /* Light orange */
+    background-color: #FFB677; /* Light Orange */
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
 /* Button styles */
 .fc-button-primary {
-    background-color: #ff66b2; /* Light pink */
-    border-color: #ff66b2; /* Light pink */
+    background-color: #FF66B2; /* Light Pink */
+    border-color: #FF66B2; /* Light Pink */
     color: #fff;
     border-radius: 5px;
 }
 
 .fc-button-primary:hover {
-    background-color: #ff3385; /* Darker pink on hover */
-    border-color: #ff3385; /* Darker pink on hover */
+    background-color: #FF3385; /* Darker Pink on Hover */
+    border-color: #FF3385; /* Darker Pink on Hover */
 }
 
 /* Date styles */
 .fc-day-header {
-    background-color: #ffeecc; /* Light yellow */
+    background-color: #FFE64D; /* Lemon Yellow */
     color: #333; /* Dark text color */
     font-weight: bold;
 }
@@ -272,10 +272,9 @@ input:checked + .slider:before {
 
 /* Current day styles */
 .fc-today {
-    background-color: #ffcc99; /* Light orange */
+    background-color: #FFB677; /* Light Orange */
     border-radius: 50%;
     color: #333; /* Dark text color */
     font-weight: bold;
 }
-
 
