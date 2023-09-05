@@ -172,6 +172,14 @@ button:hover {
     color: #fff;
     border: 1px solid #ccc;
 }
+.dark-mode #notes button {
+    background-color: #ff9999; /* Change to a different color */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 /* Slider Styles */
 .switch {
