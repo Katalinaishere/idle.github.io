@@ -230,26 +230,71 @@ function updateClockAndDate() {
 // Update the clock and date every second
 setInterval(updateClockAndDate, 1000);
 
-document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+document.addEventListener('DOMContentLoaded', function () {
+    const calendarBody = document.getElementById('calendar-body');
+    const prevMonthButton = document.getElementById('prev-month');
+    const nextMonthButton = document.getElementById('next-month');
+    const currentMonthYear = document.getElementById('current-month-year');
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: ['dayGrid'],
-        events: [
-            // Your event data here
-            {
-                title: 'Event 1',
-                start: '2023-09-15'
-            },
-            {
-                title: 'Event 2',
-                start: '2023-09-20'
+    // Function to create a calendar for the given month and year
+    function createCalendar(year, month) {
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const startDate = new Date(firstDay);
+        startDate.setDate(1 - firstDay.getDay());
+        const endDate = new Date(lastDay);
+        endDate.setDate(lastDay.getDate() + 6 - lastDay.getDay());
+
+        const days = [];
+        let currentDate = new Date(startDate);
+
+        while (currentDate <= endDate) {
+            days.push(new Date(currentDate));
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+        const calendarDays = days.map((date) => {
+            const dayElement = document.createElement('td');
+            dayElement.textContent = date.getDate();
+            return dayElement;
+        });
+
+        calendarBody.innerHTML = '';
+
+        while (calendarDays.length > 0) {
+            const weekRow = document.createElement('tr');
+            weekRow.classList.add('calendar-week');
+            for (let i = 0; i < 7; i++) {
+                if (calendarDays.length > 0) {
+                    weekRow.appendChild(calendarDays.shift());
+                } else {
+                    const emptyDay = document.createElement('td');
+                    weekRow.appendChild(emptyDay);
+                }
             }
-            // Add more events as needed
-        ]
+            calendarBody.appendChild(weekRow);
+        }
+
+        currentMonthYear.textContent = `${new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(firstDay)}`;
+    }
+
+    // Get the current date
+    const currentDate = new Date();
+
+    // Initial calendar setup
+    createCalendar(currentDate.getFullYear(), currentDate.getMonth());
+
+    // Event listener for previous month button
+    prevMonthButton.addEventListener('click', function () {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        createCalendar(currentDate.getFullYear(), currentDate.getMonth());
     });
 
-    calendar.render();
+    // Event listener for next month button
+    nextMonthButton.addEventListener('click', function () {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        createCalendar(currentDate.getFullYear(), currentDate.getMonth());
+    });
 });
 
 
