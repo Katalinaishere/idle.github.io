@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Tracker</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Add FullCalendar CSS link here -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
-    <!-- Add FullCalendar JavaScript and moment.js here -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+   <!-- Add FullCalendar CSS link here -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+<!-- Add FullCalendar JavaScript and moment.js here -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -51,6 +52,11 @@
                 <!-- To-Do List items here -->
             </ul>
         </section>
+       <section id="calendar-section">
+        <h2>Calendar</h2>
+        <div id="calendar"></div>
+       </section>
+        
         <section id="notes">
             <h2>Notes</h2>
             <textarea id="note-input" rows="4" placeholder="Write a note"></textarea>
@@ -59,10 +65,7 @@
                 <!-- Notes here -->
             </ul>
         </section>
-        </section>
-    <section id="calendar-section">
-        <div id="calendar"></div>
-    </section>
+       
     </main>
     <script src="script.js"></script>
     <script src="clock.js"></script>
