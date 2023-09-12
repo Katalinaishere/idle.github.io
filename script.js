@@ -236,6 +236,45 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextMonthButton = document.getElementById('next-month');
     const currentMonthYear = document.getElementById('current-month-year');
 
+     // Get references to the event-related elements
+    const eventList = document.getElementById('event-list');
+    const eventsForDate = document.getElementById('events-for-date');
+
+    // Function to handle date selection and display events
+    function handleDateSelection(date) {
+        // Clear existing events
+        eventsForDate.innerHTML = '';
+
+        // Filter events for the selected date
+        const selectedDate = new Date(date);
+        const selectedDateString = selectedDate.toDateString();
+
+        const filteredEvents = timerHistory.filter((event) => {
+            return event.date.toDateString() === selectedDateString;
+        });
+
+        if (filteredEvents.length === 0) {
+            eventsForDate.innerHTML = '<p>No events for this date.</p>';
+        } else {
+            filteredEvents.forEach((event) => {
+                const eventItem = document.createElement('li');
+                eventItem.textContent = `${event.name} - ${event.time}`;
+                eventsForDate.appendChild(eventItem);
+            });
+        }
+    }
+
+    // Event listener for clicking on a date cell
+    calendarBody.addEventListener('click', function (event) {
+        const target = event.target;
+
+        if (target.classList.contains('fc-day')) {
+            const date = new Date(target.getAttribute('data-date'));
+            handleDateSelection(date);
+        }
+    });
+
+
     // Function to create a calendar for the given month and year
     function createCalendar(year, month) {
         const firstDay = new Date(year, month, 1);
@@ -276,6 +315,39 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         currentMonthYear.textContent = `${new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(firstDay)}`;
+    }
+     // Function to save a time entry with a name and date
+    function saveTimeEntry() {
+        const timerName = document.getElementById('timer-name').value.trim();
+        if (timerName === '') {
+            alert('Please enter a name for this time entry.');
+            return;
+        }
+
+        const elapsedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        const timeEntry = {
+            id: Date.now(),
+            name: timerName,
+            time: elapsedTime,
+            date: new Date(), // Store the current date
+        };
+
+        timerHistory.push(timeEntry);
+
+        // Display the time entry in the history
+        const timerHistoryList = document.getElementById('timer-history');
+        const historyItem = document.createElement('li');
+        historyItem.innerHTML = `<strong>${timerName}:</strong> ${elapsedTime}`;
+        timerHistoryList.appendChild(historyItem);
+
+        // Clear the name input
+        document.getElementById('timer-name').value = '';
+
+        // Reset the timer
+        resetTimer();
+
+        // Update events for the selected date
+        handleDateSelection(timeEntry.date);
     }
 
     // Get the current date
