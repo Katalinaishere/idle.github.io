@@ -237,7 +237,11 @@ function updateClock (){
     const seconds = now.getSeconds().toString().padStart(2, '0');
    const timeString = `${hours}:${minutes}:${seconds}`;
 
-    clock.textContent = timeString;   
+     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = now.toLocaleDateString(undefined, options);
+
+    clock.textContent = timeString;
+    currentDate.textContent = dateString; // Update the date element
 }
 // Update the clock every second
 setInterval(updateClock, 1000);
