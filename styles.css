@@ -172,13 +172,25 @@ button:hover {
     color: #fff;
     border: 1px solid #ccc;
 }
+/* Corrected style for the "Add Note" button in dark mode */
 .dark-mode #notes button {
-    background-color: #ff9999; /* Change to a different color */
+    background-color: #ff0000; /* Red */
     color: #fff;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.dark-mode #note-list li {
+    background-color: #444444; /* Slightly Darker Gray */
+}
+
+.dark-mode #note-input {
+    background-color: #444444; /* Dark Gray */
+    color: #fff;
+    border: 1px solid #ccc;
+}
 }
 
 /* Slider Styles */
