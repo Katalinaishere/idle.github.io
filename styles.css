@@ -267,4 +267,27 @@ button.calendar-button {
 }
 
 button.calendar-button:hover {
-    background-color: #357AB
+    background-color: #357ABD; /* Slightly Darker Blue */
+}
+
+/* Date styles */
+.fc-day-header {
+    background-color: #ffeecc; /* Light yellow */
+    color: #333; /* Dark text color */
+    font-weight: bold;
+}
+
+/* Day cell styles */
+.fc-day {
+    background-color: #fff; /* White */
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Current day styles */
+.fc-today {
+    background-color: #ffcc99; /* Light orange */
+    border-radius: 50%;
+    color: #333; /* Dark text color */
+    font-weight: bold;
+}
