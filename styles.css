@@ -119,9 +119,9 @@ button:hover {
 }
 
 /* Dark Mode Styles */
-.dark-mode {
+body.dark-mode {
     background-color: #1E1E1E; /* Dark Gray */
-    color: #FFFFFF; /* White */
+    color: #fff; /* White */
 }
 
 .dark-mode header {
@@ -172,9 +172,10 @@ button:hover {
     color: #fff;
     border: 1px solid #ccc;
 }
+
 /* Corrected style for the "Add Note" button in dark mode */
 .dark-mode #notes button {
-    background-color: #ff0000; /* Red */
+    background-color: #FF6B6B; /* Pastel Red */
     color: #fff;
     padding: 5px 10px;
     border: none;
@@ -182,15 +183,16 @@ button:hover {
     cursor: pointer;
 }
 
-.dark-mode #note-list li {
-    background-color: #444444; /* Slightly Darker Gray */
+/* Adjust the position of the slider within the toggle switch */
+.switch .slider {
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.dark-mode #note-input {
-    background-color: #444444; /* Dark Gray */
-    color: #fff;
-    border: 1px solid #ccc;
-}
+/* Adjust the position of the slider before in dark mode */
+.dark-mode .switch .slider:before {
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Slider Styles */
@@ -239,51 +241,7 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-
-
-/* Header styles */
-.fc-header-toolbar {
-    background-color: #ffcc99; /* Light orange */
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-/* Button styles */
-.fc-button-primary {
-    background-color: #ff66b2; /* Light pink */
-    border-color: #ff66b2; /* Light pink */
-    color: #fff;
-    border-radius: 5px;
-}
-
-.fc-button-primary:hover {
-    background-color: #ff3385; /* Darker pink on hover */
-    border-color: #ff3385; /* Darker pink on hover */
-}
-
-/* Date styles */
-.fc-day-header {
-    background-color: #ffeecc; /* Light yellow */
-    color: #333; /* Dark text color */
-    font-weight: bold;
-}
-
-/* Day cell styles */
-.fc-day {
-    background-color: #fff; /* White */
-    border-radius: 5px;
-    padding: 5px;
-}
-
-/* Current day styles */
-.fc-today {
-    background-color: #ffcc99; /* Light orange */
-    border-radius: 50%;
-    color: #333; /* Dark text color */
-    font-weight: bold;
-}
-
-/* Common styles for both light and dark modes */
+/* Calendar Styles */
 .calendar {
     font-family: Arial, sans-serif;
     border-radius: 10px;
@@ -298,7 +256,7 @@ input:checked + .slider:before {
     margin-bottom: 10px;
 }
 
-button {
+button.calendar-button {
     background-color: #4A90E2; /* Light Blue */
     color: #fff;
     padding: 5px 10px;
@@ -308,71 +266,5 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #357ABD; /* Slightly Darker Blue */
-}
-
-/* Light Mode Styles */
-body.light-mode .calendar {
-    background-color: #f2f2f2; /* Light Gray */
-    color: #333; /* Dark Gray */
-}
-
-body.light-mode button {
-    background-color: #4A90E2; /* Light Blue */
-}
-
-/* Dark Mode Styles */
-body.dark-mode .calendar {
-    background-color: #1E1E1E; /* Dark Gray */
-    color: #fff; /* White */
-}
-
-body.dark-mode button {
-    background-color: #FF6B6B; /* Pastel Red */
-}
-
-
-/* Style the header toolbar (e.g., buttons) */
-.fc-header-toolbar {
-    background-color: #f2f2f2; /* Background color for toolbar */
-    border-radius: 10px; /* Rounded corners for toolbar */
-    margin-bottom: 10px; /* Spacing below the toolbar */
-}
-
-/* Style the primary button */
-.fc-button-primary {
-    background-color: #007bff; /* Button background color */
-    border-color: #007bff; /* Button border color */
-    color: #fff; /* Button text color */
-    border-radius: 5px; /* Rounded corners for buttons */
-}
-
-/* Hover effect for the primary button */
-.fc-button-primary:hover {
-    background-color: #0056b3; /* Darker background color on hover */
-    border-color: #0056b3; /* Darker border color on hover */
-}
-
-/* Style the day headers (e.g., Sunday, Monday, etc.) */
-.fc-day-header {
-    background-color: #f2f2f2; /* Background color for day headers */
-    color: #333; /* Text color for day headers */
-    font-weight: bold; /* Bold text for day headers */
-}
-
-/* Style the day cells */
-.fc-day {
-    background-color: #fff; /* Background color for day cells */
-    border-radius: 5px; /* Rounded corners for day cells */
-    padding: 5px; /* Spacing inside day cells */
-}
-
-/* Style the current day cell */
-.fc-today {
-    background-color: #007bff; /* Background color for the current day */
-    border-radius: 50%; /* Circle for the current day cell */
-    color: #fff; /* Text color for the current day */
-    font-weight: bold; /* Bold text for the current day */
-}
-
+button.calendar-button:hover {
+    background-color: #357AB
