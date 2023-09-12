@@ -291,3 +291,115 @@ button.calendar-button:hover {
     color: #333; /* Dark text color */
     font-weight: bold;
 }
+/* Event List Styles */
+#event-list {
+    background-color: #FFFFFF; /* White */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#events-for-date {
+    list-style: none;
+    padding: 0;
+}
+
+#events-for-date li {
+    background-color: #E5E5E5; /* Light Gray */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #C1C1C1; /* Light Gray */
+    border-radius: 5px;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #1E1E1E; /* Dark Gray */
+    color: #FFFFFF; /* White */
+}
+
+.dark-mode header {
+    background-color: #444444; /* Slightly Darker Gray */
+}
+
+/* ... (Existing dark mode styles) ... */
+
+/* Event List Styles in Dark Mode */
+.dark-mode #event-list {
+    background-color: #333333; /* Dark Gray */
+    color: #fff;
+}
+
+.dark-mode #events-for-date li {
+    background-color: #444444; /* Slightly Darker Gray */
+}
+
+/* Corrected style for the "Add Note" button in dark mode */
+.dark-mode #notes button {
+    background-color: #ff0000; /* Red */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dark-mode #note-list li {
+    background-color: #444444; /* Slightly Darker Gray */
+}
+
+.dark-mode #note-input {
+    background-color: #444444; /* Dark Gray */
+    color: #fff;
+    border: 1px solid #ccc;
+}
+
+/* Common styles for both light and dark modes */
+.calendar {
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    background-color: #fff; /* Default background color */
+    color: #333; /* Default text color */
+}
+
+.calendar-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4A90E2; /* Light Blue */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #357ABD; /* Slightly Darker Blue */
+}
+
+/* Light Mode Styles */
+body.light-mode .calendar {
+    background-color: #f2f2f2; /* Light Gray */
+    color: #333; /* Dark Gray */
+}
+
+body.light-mode button {
+    background-color: #4A90E2; /* Light Blue */
+}
+
+/* Dark Mode Styles */
+body.dark-mode .calendar {
+    background-color: #1E1E1E; /* Dark Gray */
+    color: #fff; /* White */
+}
+
+body.dark-mode button {
+    background-color: #FF6B6B; /* Pastel Red */
+}
