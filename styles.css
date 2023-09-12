@@ -283,23 +283,55 @@ input:checked + .slider:before {
     font-weight: bold;
 }
 
-/* Customize the FullCalendar container */
-#calendar {
-    background-color: #fff; /* Background color of the calendar */
-    border-radius: 10px; /* Rounded corners for the calendar */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for the calendar */
-    padding: 20px; /* Spacing around the calendar */
+/* Common styles for both light and dark modes */
+.calendar {
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    background-color: #fff; /* Default background color */
+    color: #333; /* Default text color */
 }
 
-/* Style the event titles */
-.fc-event {
-    background-color: #007bff; /* Event background color */
-    color: #fff; /* Event text color */
-    border: none; /* Remove event border */
-    border-radius: 5px; /* Rounded corners for events */
-    padding: 5px 10px; /* Spacing inside events */
-    cursor: pointer; /* Change cursor to pointer on hover */
+.calendar-header {
+    text-align: center;
+    margin-bottom: 10px;
 }
+
+button {
+    background-color: #4A90E2; /* Light Blue */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #357ABD; /* Slightly Darker Blue */
+}
+
+/* Light Mode Styles */
+body.light-mode .calendar {
+    background-color: #f2f2f2; /* Light Gray */
+    color: #333; /* Dark Gray */
+}
+
+body.light-mode button {
+    background-color: #4A90E2; /* Light Blue */
+}
+
+/* Dark Mode Styles */
+body.dark-mode .calendar {
+    background-color: #1E1E1E; /* Dark Gray */
+    color: #fff; /* White */
+}
+
+body.dark-mode button {
+    background-color: #FF6B6B; /* Pastel Red */
+}
+
 
 /* Style the header toolbar (e.g., buttons) */
 .fc-header-toolbar {
