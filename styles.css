@@ -227,23 +227,7 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-/* Cute FullCalendar Style */
 
-/* Calendar container */
-#calendar {
-    background-color: #ffeecc; /* Light yellow */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-}
-
-/* Event styles */
-.fc-event {
-    background-color: #ff99cc; /* Pink */
-    color: #fff;
-    border-radius: 5px;
-    padding: 5px 10px;
-}
 
 /* Header styles */
 .fc-header-toolbar {
@@ -286,3 +270,65 @@ input:checked + .slider:before {
     color: #333; /* Dark text color */
     font-weight: bold;
 }
+
+/* Customize the FullCalendar container */
+#calendar {
+    background-color: #fff; /* Background color of the calendar */
+    border-radius: 10px; /* Rounded corners for the calendar */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for the calendar */
+    padding: 20px; /* Spacing around the calendar */
+}
+
+/* Style the event titles */
+.fc-event {
+    background-color: #007bff; /* Event background color */
+    color: #fff; /* Event text color */
+    border: none; /* Remove event border */
+    border-radius: 5px; /* Rounded corners for events */
+    padding: 5px 10px; /* Spacing inside events */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Style the header toolbar (e.g., buttons) */
+.fc-header-toolbar {
+    background-color: #f2f2f2; /* Background color for toolbar */
+    border-radius: 10px; /* Rounded corners for toolbar */
+    margin-bottom: 10px; /* Spacing below the toolbar */
+}
+
+/* Style the primary button */
+.fc-button-primary {
+    background-color: #007bff; /* Button background color */
+    border-color: #007bff; /* Button border color */
+    color: #fff; /* Button text color */
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+/* Hover effect for the primary button */
+.fc-button-primary:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+    border-color: #0056b3; /* Darker border color on hover */
+}
+
+/* Style the day headers (e.g., Sunday, Monday, etc.) */
+.fc-day-header {
+    background-color: #f2f2f2; /* Background color for day headers */
+    color: #333; /* Text color for day headers */
+    font-weight: bold; /* Bold text for day headers */
+}
+
+/* Style the day cells */
+.fc-day {
+    background-color: #fff; /* Background color for day cells */
+    border-radius: 5px; /* Rounded corners for day cells */
+    padding: 5px; /* Spacing inside day cells */
+}
+
+/* Style the current day cell */
+.fc-today {
+    background-color: #007bff; /* Background color for the current day */
+    border-radius: 50%; /* Circle for the current day cell */
+    color: #fff; /* Text color for the current day */
+    font-weight: bold; /* Bold text for the current day */
+}
+
