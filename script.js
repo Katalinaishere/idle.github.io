@@ -228,26 +228,33 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar.render();
 });
 
-// Real time clock 
-function updateClock (){
+function updateClockAndDate() {
     const clock = document.getElementById('clock');
-    const now = new Date(); 
+    const currentDate = document.getElementById('current-date');
+
+    const now = new Date();
+
+    // Update the time
     const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
     const seconds = now.getSeconds().toString().padStart(2, '0');
-   const timeString = `${hours}:${minutes}:${seconds}`;
-
-     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const dateString = now.toLocaleDateString(undefined, options);
-
+    const timeString = `${hours}:${minutes}:${seconds}`;
     clock.textContent = timeString;
-    currentDate.textContent = dateString; // Update the date element
+
+    // Update the date
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = now.toLocaleDateString(undefined, options);
+    currentDate.textContent = dateString;
 }
-// Update the clock every second
-setInterval(updateClock, 1000);
+
+// Update the clock and date every second
+setInterval(updateClockAndDate, 1000);
+
+// Call the function on page load to initialize the clock and date
+updateClockAndDate();
+
 
 // Initialize dark mode preference and button text
 checkDarkModePreference();
 updateTimerDisplay();
 displayTimerHistory();
-updateClock(); // Initialize the clock
