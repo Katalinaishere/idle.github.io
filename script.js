@@ -206,27 +206,7 @@ function displayTimerHistory() {
         timerHistoryList.appendChild(historyItem);
     }
 }
-document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: ['dayGrid'],
-        events: [
-            // Your event data here
-            {
-                title: 'Event 1',
-                start: '2023-09-15'
-            },
-            {
-                title: 'Event 2',
-                start: '2023-09-20'
-            }
-            // Add more events as needed
-        ]
-    });
-
-    calendar.render();
-});
 
 function updateClockAndDate() {
     const clock = document.getElementById('clock');
@@ -249,6 +229,30 @@ function updateClockAndDate() {
 
 // Update the clock and date every second
 setInterval(updateClockAndDate, 1000);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        plugins: ['dayGrid'],
+        events: [
+            // Your event data here
+            {
+                title: 'Event 1',
+                start: '2023-09-15'
+            },
+            {
+                title: 'Event 2',
+                start: '2023-09-20'
+            }
+            // Add more events as needed
+        ]
+    });
+
+    calendar.render();
+});
+
+
 
 // Call the function on page load to initialize the clock and date
 updateClockAndDate();
